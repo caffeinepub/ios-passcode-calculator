@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0 0;
+    --foreground: 1 0 0;
+    --card: 0.1 0 0;
+    --card-foreground: 1 0 0;
+    --popover: 0.1 0 0;
+    --popover-foreground: 1 0 0;
+    --primary: 1 0 0;
+    --primary-foreground: 0 0 0;
+    --secondary: 0.2 0 0;
+    --secondary-foreground: 1 0 0;
+    --muted: 0.15 0 0;
+    --muted-foreground: 0.7 0 0;
+    --accent: 0.2 0 0;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 1 0 0;
+    --border: 0.25 0 0;
+    --input: 0.2 0 0;
+    --ring: 0.8 0 0;
+    --radius: 0.5rem;
+    --chart-1: 0.7 0.15 250;
+    --chart-2: 0.7 0.15 160;
+    --chart-3: 0.7 0.15 30;
+    --chart-4: 0.7 0.15 300;
+    --chart-5: 0.7 0.15 60;
+    --sidebar: 0.05 0 0;
+    --sidebar-foreground: 1 0 0;
+    --sidebar-primary: 1 0 0;
+    --sidebar-primary-foreground: 0 0 0;
+    --sidebar-accent: 0.15 0 0;
+    --sidebar-accent-foreground: 1 0 0;
+    --sidebar-border: 0.2 0 0;
+    --sidebar-ring: 0.7 0 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: #000;
+    overscroll-behavior: none;
+  }
+  html {
+    overscroll-behavior: none;
+  }
+}
+
+@keyframes dot-fill {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes key-label-swap {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dot-filled {
+  animation: dot-fill 150ms ease-out forwards;
+}
+
+.label-swap {
+  animation: key-label-swap 400ms ease-in-out forwards;
+}
